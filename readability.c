@@ -6,7 +6,7 @@
 int get_letters(string tex);
 int get_words(string tex);
 int get_sentences(string tex);
-int get_index(string tex);
+
 
 
 int main(void)
@@ -38,7 +38,7 @@ int get_letters(string tex)
     {
         if ((tex[i] >= (int)'a' && tex[i] <= (int)'z') || (tex[i] >= (int)'A' && tex[i] <= (int)'Z'))
         {
-            letters++;
+            letters;
         }
        
     }
@@ -56,7 +56,7 @@ int get_words(string tex)
             words++;
         }
     }
-    return words + 1;
+    return words;
 }
 // for counting sentences
 int get_sentences(string tex)
@@ -75,7 +75,7 @@ int get_sentences(string tex)
 // for calculating index
 int get_index(string tex)
 {
-    float L = (float) get_letters(tex) / get_words(tex) * 100;
+    float L = (float) get_words(tex) / get_letters(tex) * 100;
     float S = (float) get_sentences(tex) / get_words(tex) * 100; 
     int index = round((0.0588 * L) - (0.296 * S) - 15.8);
     
